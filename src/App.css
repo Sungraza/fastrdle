@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+#root {
+  font-family: 'Roboto Slab', serif;
+  margin: auto;
+  max-width: 60%;
+}
+
+.Header {
+  font-size: 35px;
+  text-align: center;
+  width: 100%;
+  padding-top: 120px;
+}
+
+.Repository {
+    margin-right: 20px;
+}
+
+.navbar {
+    -webkit-box-shadow: 0px 10px 5px 0px rgba(219,219,219,1);
+    -moz-box-shadow: 0px 10px 5px 0px rgba(219,219,219,1);
+    box-shadow: 0px 10px 5px 0px rgba(219,219,219,1);  
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.login {
+    font-size: 20px;
+    text-align: center;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    margin-right: 30px;
+}
+
+.keyRow, .gridRow {
+    font-weight: bold;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+}
+
+.tile {
+    font-weight: bold;
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    color: black;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 7px 10px 7px 10px;
+}
+
+.Timer {
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+}
+
+.secondsLeft {
+    font-family: 'Courier New', monospace!important;
+    font-size: 70px;
+    color: #dc3545;
+}
+
+.empty {
+    border: 2px solid #6c757d;
+}
+
+.filled {
+    border: 2px solid #343a40;
+}
+
+.correct {
+    background-color: #28a745!important; 
+    color: white!important;
+    border: 2px solid #28a745!important;
+}
+
+.wrong {
+    background-color: #343a40!important;
+    color: white!important;
+    border: 2px solid #343a40!important;
+}
+
+.placement {
+    background-color: #fd7e14!important;
+    color: white!important;
+    border: 2px solid #fd7e14!important;
+}
+
+.animate {
+    animation-name: Flip;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in;
+}
+  
+@keyframes Flip {
+    0% {
+      transform: rotateX(0);
+    }
+    50% {
+      transform: rotateX(-90deg);
+    }
+    100% {
+        transform: rotateX(0);
+    }
+    
+}
+
+.keyRow .btn {
+    font-weight: bold;
+    height: 58px;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+
+.start {
+    font-weight: bold;
+}
+
+.navbar-text {
+    padding-top: 0.1rem!important;
+    padding-bottom: 0.1rem!important;
+}
+
+.LastUpdated {
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 20px;
+}
