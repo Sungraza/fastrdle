@@ -15,7 +15,7 @@ export const startTimer = ((el, seconds) => {
         let currentSeconds = parseInt(document.getElementsByClassName(el)[0].innerHTML);
     
         let countdown = setInterval(() => {
-            if (localStorage.getItem("currentRow") != prevRow || localStorage.getItem("gameState") == "won") {
+            if (localStorage.getItem("currentRow") != prevRow || localStorage.getItem("gameState") == "won" || localStorage.getItem("gameState") == "lost") {
                 clearInterval(countdown);
                 clearTimeout(stop);
                 prevRow++;

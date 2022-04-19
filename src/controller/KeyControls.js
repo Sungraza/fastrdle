@@ -69,7 +69,8 @@ export const onEnter = ((e) => {
                 localStorage.setItem("gameState", "won");
                 createAlert("Great Job!", "You guessed the word, " + localStorage.getItem("solution") + "!", "success");
             } else if (previousTile.parentElement.id == "row6") {
-                createAlert("Game Over", "You didn't win, the word was " + localStorage.getItem("solution"), "success");
+                createAlert("Game Over", "You didn't win, the word was " + localStorage.getItem("solution"), "dark");
+                localStorage.setitem("gameState", "lost");
             }
         } else {
             createAlert("Error", "That\'s not a word!", "danger");
