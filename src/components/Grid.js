@@ -35,11 +35,11 @@ const Grid = (props) => {
       }, []);
     
     let firstRow = [
-    <div className="tile empty" key="0">&nbsp;</div>,
-    <div className="tile empty" key="1">&nbsp;</div>, 
-    <div className="tile empty" key="2">&nbsp;</div>, 
-    <div className="tile empty" key="3">&nbsp;</div>, 
-    <div className="tile empty" key="4">&nbsp;</div>
+    <div className="tile empty" style={{ userSelect: "none" }} key="0">&nbsp;</div>,
+    <div className="tile empty" style={{ userSelect: "none" }} key="1">&nbsp;</div>, 
+    <div className="tile empty" style={{ userSelect: "none" }} key="2">&nbsp;</div>, 
+    <div className="tile empty" style={{ userSelect: "none" }} key="3">&nbsp;</div>, 
+    <div className="tile empty" style={{ userSelect: "none" }} key="4">&nbsp;</div>
     ]
     let secondRow = [...firstRow];
     let thirdRow = [...firstRow];
