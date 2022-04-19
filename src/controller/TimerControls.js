@@ -1,3 +1,5 @@
+import { createAlert } from './AlertControls';
+
 export const createTimer = (() => {
     localStorage.setItem("timer", "idle");
     localStorage.setItem("timerRow", 1);
@@ -26,6 +28,7 @@ export const startTimer = ((el, seconds) => {
         let stop = setTimeout(() => {
             localStorage.setItem("timer", "up");
             clearInterval(countdown);
+            createAlert("Game Over", "You couldn't finish the game before the timer finished!", "dark");
         }, (seconds)*1000)
    })
 

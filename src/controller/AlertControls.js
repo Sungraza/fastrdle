@@ -7,7 +7,7 @@ export const createAlert = ((header, body, color, state) => {
     message.classList.add("visible");
     let i = 0;
     
-    if (header != "Great Job!") {
+    if (header != "Great Job!" && header != "Game Over") {
         let close = setTimeout(() => {
             message.classList.remove("visible");
         }, 3*1000)
