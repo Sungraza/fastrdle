@@ -1,7 +1,7 @@
 
 # Fastrdle
 
-Another variant (who could've guessed?) of Wordle, made for Dev Club. This App introduces a time aspect along with the original Wordle. For now, there is only a 15s mode. More modes were supposed to be added, but could not be due to the short timeframe for submission.
+A variant of Wordle, made for Dev Club. This App introduces a time aspect along with the original Wordle. For now, there is only a 15s mode. More modes were supposed to be added, but could not be due to the short timeframe for submission.
 
 ## Prerequisites
 
