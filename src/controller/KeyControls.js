@@ -1,4 +1,5 @@
-import { IsWordInList, checkWord, IsWordSolution } from './WordControls.js';
+import { IsWordInList, checkWord, IsWordSolution } from './WordControls';
+import { createAlert } from './AlertControls'; 
 
 export const onPress = ((key) => {
     const tile = document.getElementsByClassName("tile empty")[0];
@@ -45,7 +46,7 @@ export const onEnter = ((e) => {
             fullWord += tiles[i].innerHTML;
         }
     
-        if (fullWord.length < 5) return;
+        if (fullWord.length < 5) return createAlert("Error", "Please type a five-letter word!", "danger");
     
         if (IsWordInList(fullWord)) {
             previousTile.parentElement.classList.add("finished");
@@ -66,9 +67,13 @@ export const onEnter = ((e) => {
             
             if (IsWordSolution(fullWord)) {
                 localStorage.setItem("gameState", "won");
+                createAlert("Great Job!", "You guessed the word, " + localStorage.getItem("solution") + "!", "dark");
             } else if (previousTile.parentElement.id == "row6") {
                 console.log("You didn't win, the word was " + localStorage.getItem("solution"));
+                createAlert("Game Over", "You didn't win, the word was " + localStorage.getItem("solution"), "dark");
             }
-        } else console.log("Not a word!");
+        } else {
+            createAlert("Error", "That\'s not a word!", "danger");
+        }
     }
 });

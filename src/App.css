@@ -150,3 +150,20 @@
     right: 0;
     margin-right: 20px;
 }
+
+.Message {
+    margin-top: 100px;
+    margin-right: 20px;
+    width: 30%!important;
+    vertical-align: middle;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+}
+
+.visible {
+    visibility: visible!important;
+}

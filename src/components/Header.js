@@ -11,7 +11,7 @@ const Header = (props) => {
                 <strong>Fastrdle</strong>
             </Navbar.Text>
             <Navbar.Text className="Repository">
-                <a href="https://github.com/">
+                <a href="https://github.com/razaoffline/fastrdle">
                     <FontAwesomeIcon icon={faFileCode} size="lg" />
                 </a>
             </Navbar.Text>

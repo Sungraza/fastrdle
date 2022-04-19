@@ -1,24 +1,30 @@
 import WORDLIST from '../words';
 import { useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
+import { createAlert } from '../controller/AlertControls';
 
 const Grid = (props) => {
     
     props.createSolution(WORDLIST.WORDLIST);
     props.changeGameState("guessing");
     props.changeRow(1);
+    props.createAlertState(1);
     
     useEffect(() => {
         const listener = ((e) => {
-            if (localStorage.getItem("gameState") == "won" || localStorage.getItem("timer") == "up" || localStorage.getItem("timer") == "idle") return;
+            if (!e.ctrlKey && !e.shiftKey) {
+                if (localStorage.getItem("gameState") == "won") return;
+                if (localStorage.getItem("timer") == "idle") return createAlert("Error", "Please start the timer!", "danger");
+                if (localStorage.getItem("timer") == "up") return createAlert("Game Over", "You couldn't finish the game before the timer finished!", "dark");
             
-            if (e.key.match(/^[A-Za-z]+$/) && e.key.length < 2 && !e.ctrlKey && !e.shiftKey) {
-                e.preventDefault();
-                props.onPress(e.key);
-            } else if (e.key == "Enter") {
-                props.onEnter();
-            } else if (e.key == "Backspace") {
-                props.onBackspace();
+                if (e.key.match(/^[A-Za-z]+$/) && e.key.length < 2) {
+                    e.preventDefault();
+                    props.onPress(e.key);
+                } else if (e.key == "Enter") {
+                    props.onEnter();
+                } else if (e.key == "Backspace") {
+                    props.onBackspace();
+                }
             }
         });
         

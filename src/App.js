@@ -10,6 +10,7 @@ import Header from './components/Header';
 import Grid from './components/Grid';
 import Keyboard from './components/Keyboard';
 import Timer from './components/Timer';
+import Message from './components/Message'
 
 import { onPress, onBackspace, onEnter } from './controller/KeyControls';
 import { createTimer, startTimer } from './controller/TimerControls';
@@ -26,6 +27,10 @@ class App extends React.Component {
   
   changeGameState(state) {
       localStorage.setItem("gameState", state);
+  }
+  
+  createAlertState(state) {
+      localStorage.setItem("alertState", state);
   }
   
   pressKeyOnBoard(key) {
@@ -49,6 +54,7 @@ class App extends React.Component {
     return (
         <Container>
             <Header/>
+            <Message />
             <Row style={{ justifyContent: "center" }}>
                 <Col sm={8}>
                 <Row style={{ justifyContent: "space-evenly" }}>
@@ -60,6 +66,7 @@ class App extends React.Component {
                         createSolution={(list) => this.createSolution(list)} 
                         changeGameState={(state) => this.changeGameState(state)}
                         changeRow={(row) => this.changeRow(row)}
+                        createAlertState={(state) => this.createAlertState(state)}
                         />
                     </Col>
                     <Col>
