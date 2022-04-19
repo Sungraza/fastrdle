@@ -2,7 +2,6 @@ import { createAlert } from './AlertControls';
 
 export const createTimer = (() => {
     localStorage.setItem("timer", "idle");
-    localStorage.setItem("timerRow", 1);
 });
 
 export const startTimer = ((el, seconds) => {

@@ -29,9 +29,6 @@ class App extends React.Component {
       localStorage.setItem("gameState", state);
   }
   
-  createAlertState(state) {
-      localStorage.setItem("alertState", state);
-  }
   
   pressKeyOnBoard(key) {
       if (localStorage.getItem("gameState") == "won" || localStorage.getItem("timer") == "up" || localStorage.getItem("timer") == "idle") return;
@@ -55,9 +52,9 @@ class App extends React.Component {
         <Container>
             <Header/>
             <Message />
-            <Row style={{ justifyContent: "center" }}>
+            <Row className="appCont" style={{ justifyContent: "center", verticalAlign: "middle" }}>
                 <Col sm={8}>
-                <Row style={{ justifyContent: "space-evenly" }}>
+                <Row style={{ justifyContent: "space-evenly", display: "flex", flexDirection: "row", flexWrap: "nowrap" }}>
                     <Col>
                         <Grid 
                         onPress={(e) => onPress(e)}
@@ -66,7 +63,6 @@ class App extends React.Component {
                         createSolution={(list) => this.createSolution(list)} 
                         changeGameState={(state) => this.changeGameState(state)}
                         changeRow={(row) => this.changeRow(row)}
-                        createAlertState={(state) => this.createAlertState(state)}
                         />
                     </Col>
                     <Col>

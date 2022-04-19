@@ -8,7 +8,6 @@ const Grid = (props) => {
     props.createSolution(WORDLIST.WORDLIST);
     props.changeGameState("guessing");
     props.changeRow(1);
-    props.createAlertState(1);
     
     useEffect(() => {
         const listener = ((e) => {

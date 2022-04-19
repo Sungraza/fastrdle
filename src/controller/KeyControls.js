@@ -67,10 +67,9 @@ export const onEnter = ((e) => {
             
             if (IsWordSolution(fullWord)) {
                 localStorage.setItem("gameState", "won");
-                createAlert("Great Job!", "You guessed the word, " + localStorage.getItem("solution") + "!", "dark");
+                createAlert("Great Job!", "You guessed the word, " + localStorage.getItem("solution") + "!", "success");
             } else if (previousTile.parentElement.id == "row6") {
-                console.log("You didn't win, the word was " + localStorage.getItem("solution"));
-                createAlert("Game Over", "You didn't win, the word was " + localStorage.getItem("solution"), "dark");
+                createAlert("Game Over", "You didn't win, the word was " + localStorage.getItem("solution"), "success");
             }
         } else {
             createAlert("Error", "That\'s not a word!", "danger");
