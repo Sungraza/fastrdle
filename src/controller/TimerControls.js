@@ -18,7 +18,7 @@ export const startTimer = ((el, seconds) => {
             if (localStorage.getItem("currentRow") != prevRow || localStorage.getItem("gameState") == "won" || localStorage.getItem("gameState") == "lost") {
                 clearInterval(countdown);
                 clearTimeout(stop);
-                prevRow++;
+                prevRow = localStorage.getItem("currentRow");
             }
             currentSeconds--;
             document.getElementsByClassName(el)[0].innerHTML = currentSeconds + "s";
@@ -33,7 +33,7 @@ export const startTimer = ((el, seconds) => {
 
    setInterval(() => {
      if (localStorage.getItem("currentRow") != row) {
-         row++;
+         row = localStorage.getItem("currentRow");
          document.getElementsByClassName(el)[0].innerHTML = "15s";
          timer()
      }

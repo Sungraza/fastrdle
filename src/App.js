@@ -14,6 +14,7 @@ import Message from './components/Message'
 
 import { onPress, onBackspace, onEnter } from './controller/KeyControls';
 import { createTimer, startTimer } from './controller/TimerControls';
+import { createAlert } from './controller/AlertControls';
 
 class App extends React.Component {
   constructor() {
@@ -31,13 +32,15 @@ class App extends React.Component {
   
   
   pressKeyOnBoard(key) {
-      if (localStorage.getItem("gameState") == "won" || localStorage.getItem("timer") == "up" || localStorage.getItem("timer") == "idle") return;
-      
+      if (localStorage.getItem("gameState") == "won") return createAlert("Great Job!", "You guessed the word, " + localStorage.getItem("solution") + "!", "success");
+      if (localStorage.getItem("gameState") == "lost") return createAlert("Game Over", "You didn't win, the word was " + localStorage.getItem("solution"), "dark");
+      if (localStorage.getItem("timer") == "idle") return createAlert("Error", "Please start the timer!", "danger");
+      if (localStorage.getItem("timer") == "up") return createAlert("Game Over", "You couldn't finish the game before the timer finished!", "dark");
+            
       if (key == "Back") {
           onBackspace();
       } else if (key == "Enter") {
           onEnter();
-          localStorage.setItem("currentRow", localStorage.getItem("currentRow")+1);
       } else {
           onPress(key);
       }
