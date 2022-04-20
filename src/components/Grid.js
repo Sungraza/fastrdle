@@ -13,6 +13,7 @@ const Grid = (props) => {
         const listener = ((e) => {
             if (!e.ctrlKey && !e.shiftKey) {
                 if (localStorage.getItem("gameState") == "won") return;
+                if (localStorage.getItem("gameState") == "lost") return createAlert("Game Over", "You didn't win, the word was " + localStorage.getItem("solution"), "dark");
                 if (localStorage.getItem("timer") == "idle") return createAlert("Error", "Please start the timer!", "danger");
                 if (localStorage.getItem("timer") == "up") return createAlert("Game Over", "You couldn't finish the game before the timer finished!", "dark");
             
