@@ -27,7 +27,7 @@ export const startTimer = ((el, seconds) => {
         let stop = setTimeout(() => {
             localStorage.setItem("timer", "up");
             clearInterval(countdown);
-            createAlert("Game Over", "You couldn't finish the game before the timer finished!", "dark");
+            createAlert("Game Over", "You couldn't finish the game before the timer finished, the word was " + localStorage.getItem("solution"), "dark");
         }, (seconds)*1000)
    })
 
